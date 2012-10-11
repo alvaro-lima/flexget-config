@@ -48,7 +48,7 @@ presets:
   movies:
     # Check if the movie already exists locally
     exists_movie: @DOWNLOADS_ROOT@/_Movies
-    seen_movies: loose
+    seen_movies: strict
 
     # Set the download path for movies
     set:                                                                                                               
@@ -67,7 +67,7 @@ presets:
       what:
         - emit_movie_queue: yes
       from:
-        - torrentz
+        - torrentz: verified
       type: movies
 
     # Don't download movies already rated 
@@ -81,8 +81,8 @@ presets:
         - imdb_id
       action: reject
 
-# Feeds
-feeds:
+# Tasks
+tasks:
   # Fetch titles from an IMDB watchlist and build the movie queue
   IMDB-Watchlist:
     imdb_list:
