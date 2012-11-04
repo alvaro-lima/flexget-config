@@ -20,9 +20,11 @@ presets:
       # 'pathscrub' not yet available??
       #pathscrub: mac
 
-    # Use the Notify My Android API on new downloads
-    notifymyandroid:
-      apikey: @NMA_API_KEY@
+    # Send a Pushover notification for new downloads
+    pushover:
+      userkey: @PUSHOVER_USER_KEY@
+      apikey: @PUSHOVER_API_KEY@
+      device: @PUSHOVER_DEVICE@
 
   # TV shows
   tv:
@@ -56,7 +58,7 @@ presets:
 
     # Set quality: only DVDRip or better and only up-to 720p 
     #   (1080p pushes the 2008 MacMini a bit too hard)
-    quality: dvdrip-bluray <=720p
+    quality: hdrip-bluray <=720p
 
     # Apply to the movie queue
     movie_queue: yes
@@ -67,7 +69,7 @@ presets:
       what:
         - emit_movie_queue: yes
       from:
-        - torrentz: verified
+        - torrentz
       type: movies
 
     # Don't download movies already rated 
@@ -96,7 +98,6 @@ tasks:
   # Newly available Movies feed
   Torrentz-Movies:
     rss: http://torrentz.eu/feed_verified?q=movies
-    imdb_lookup: yes
     preset:
       - movies
       - downloader
