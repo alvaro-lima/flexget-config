@@ -23,7 +23,7 @@ presets:
     # Send a Pushover notification for new downloads
     pushover:
       userkey: G49sadwAjzpZCV51AEJowW1YbBFlSk
-      apikey: 9lnmJP1quht0ZzMXDK2Bq6KnqBpQJm
+      apikey: WYgKOx8XRECNPEpZzMAclfz9X7WnFj
       device: SGS2
 
   # TV shows
