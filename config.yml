@@ -24,7 +24,6 @@ presets:
     pushover:
       userkey: @PUSHOVER_USER_KEY@
       apikey: @PUSHOVER_API_KEY@
-      device: @PUSHOVER_DEVICE@
 
   # TV shows
   tv:
