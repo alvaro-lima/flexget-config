@@ -6,6 +6,9 @@ presets:
       # RAR is not an appropriate file format for BitTorrent
       reject: "*.rar"
 
+    # Ensure Mac friendly filenames/paths
+    pathscrub: mac
+
   # If the decision is made to download, apply these settings
   downloader:
     # Send to Transmission
@@ -15,10 +18,6 @@ presets:
 
       # Remove Transmission entries when 'done'
       removewhendone: yes
-
-      # Ensure Mac friendly filenames/paths
-      # 'pathscrub' not yet available??
-      #pathscrub: mac
 
     # Send a Pushover notification for new downloads
     pushover:
