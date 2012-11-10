@@ -24,7 +24,6 @@ presets:
     pushover:
       userkey: G49sadwAjzpZCV51AEJowW1YbBFlSk
       apikey: WYgKOx8XRECNPEpZzMAclfz9X7WnFj
-      device: SGS2
 
   # TV shows
   tv:
