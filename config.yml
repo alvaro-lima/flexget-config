@@ -61,9 +61,8 @@ presets:
     set:                                                                                                               
       path: /c/Downloads/_Movies   
 
-    # Set quality: only DVDRip or better and only up-to 720p 
-    #   (1080p pushes the 2008 MacMini a bit too hard)
-    quality: hdrip-bluray <=720p
+    # Set quality: only DVDRip or better
+    quality: hdrip-bluray
 
     # Apply to the movie queue
     movie_queue: yes
