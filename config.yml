@@ -74,7 +74,6 @@ presets:
         - emit_movie_queue: yes
       from:
         - torrentz: verified
-      type: movies
 
     # Don't download movies already rated 
     #   (i.e. already seen)
