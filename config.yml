@@ -43,13 +43,6 @@ presets:
           account_id: F8B4B7D7E60FE985
           strip_dates: yes
 
-    # Override the paths for some shows
-    series:
-      # Overrides
-      - BBC Horizon
-      - Top Gear:
-          path: "/c/Downloads/_Scott/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
-
   # Movies
   movies:
     # Check if the movie already exists locally
