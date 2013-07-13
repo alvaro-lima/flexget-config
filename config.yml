@@ -6,15 +6,15 @@ presets:
       # RAR is not an appropriate file format for BitTorrent
       reject: "*.rar"
 
-    # Ensure Mac friendly filenames/paths
-    pathscrub: mac
-
   # If the decision is made to download, apply these settings
   downloader:
     # Send to Transmission
     transmission:
       netrc: /root/.netrc
       path: @DOWNLOADS_ROOT@
+
+      # Ensure Mac friendly filenames/paths
+      pathscrub: mac
 
       # Remove Transmission entries when 'done'
       removewhendone: yes
