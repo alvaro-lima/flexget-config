@@ -91,14 +91,14 @@ tasks:
 
   # Newly available Movies feed
   Torrentz-Movies:
-    rss: http://torrentz.eu/feed_verified?q=movies
+    rss: http://movieboot.com/rss/@MOVIEBOOT_ID@/
     preset:
       - movies
       - downloader
 
   # Newly available TV shows feed
   Torrentz-TV:
-    rss: http://torrentz.eu/feed_verified?q=tv
+    rss: http://showrss.info/feeds/all.rss
     preset:
       - tv
       - downloader
