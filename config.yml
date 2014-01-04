@@ -71,6 +71,9 @@ templates:
         - imdb_id
       action: reject
 
+    # Attempt to prevent bogus downloads
+    imdb_required: yes
+
 # Tasks
 tasks:
   # Fetch titles from an IMDB watchlist and add to the movie queue
