@@ -84,9 +84,7 @@ tasks:
   Movies:
     template:
       - movies
-      - downloader
 
   TV:
     template:
       - tv
-      - downloader
