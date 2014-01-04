@@ -1,4 +1,4 @@
-presets:
+templates:
   # Applies to all sections
   global:
     # Files we're not interested in
@@ -36,7 +36,7 @@ presets:
       path: "@DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
 
     # Import TV series to download from thetvdb.com
-    import_series:
+    configure_series:
       from:
         thetvdb_favorites:
           account_id: @TVDB_ID@
@@ -92,13 +92,13 @@ tasks:
   # Newly available Movies feed
   Torrentz-Movies:
     rss: http://movieboot.com/rss/@MOVIEBOOT_ID@/
-    preset:
+    template:
       - movies
       - downloader
 
   # Newly available TV shows feed
   Torrentz-TV:
     rss: http://showrss.info/feeds/all.rss
-    preset:
+    template:
       - tv
       - downloader
