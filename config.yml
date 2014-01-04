@@ -11,7 +11,7 @@ templates:
     # Add the output plugin for Transmission
     transmission:
       netrc: /root/.netrc
-      removewhendone: yes 	# Remove entries when max ratio reached
+      removewhendone: yes # Remove entries when max ratio reached
 
   # TV shows
   tv:
@@ -36,7 +36,7 @@ templates:
             category: tv
             verified: yes
         - piratebay:
-            category: 207	# "HD - TV"
+            category: 207 # "HD - TV"
             sort_by: seeds
 
   # Movies
@@ -58,7 +58,7 @@ templates:
             category: movies
             verified: yes
         - piratebay:
-            category: 207	# "HD - Movies"
+            category: 207 # "HD - Movies"
             sort_by: seeds
 
     # Don't download movies already rated 
