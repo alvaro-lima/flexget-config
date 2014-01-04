@@ -96,7 +96,7 @@ templates:
 # Tasks
 tasks:
   # Fetch titles from an IMDB watchlist and build the movie queue
-  IMDB-Watchlist:
+  Watchlist:
     imdb_list:
       list: watchlist
       user_id: ur26971513
@@ -106,14 +106,14 @@ tasks:
     queue_movies: yes
 
   # Newly available Movies feed
-  Torrentz-Movies:
+  Movies:
     rss: http://movieboot.com/rss/bdaf0f48a5ab69d8d3e3d18e12b26d23/
     template:
       - movies
       - downloader
 
   # Newly available TV shows feed
-  Torrentz-TV:
+  TV:
     rss: http://showrss.info/feeds/all.rss
     template:
       - tv
