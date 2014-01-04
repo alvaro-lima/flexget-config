@@ -39,6 +39,21 @@ templates:
           account_id: @TVDB_ID@
           strip_dates: yes
 
+    # Go out into the world and find torrents
+    #   for series in the queue
+    discover:
+      what:
+        - emit_series: yes
+      from:
+        - torrentz: verified
+        - kat:
+            category: tv
+            verified: yes
+        - piratebay:
+            # 207 = "HD - TV"
+            category: 207
+            sort_by: seeds
+
   # Movies
   movies:
     # Check if the movie already exists locally
@@ -59,6 +74,13 @@ templates:
         - emit_movie_queue: yes
       from:
         - torrentz: verified
+        - kat:
+            category: movies
+            verified: yes
+        - piratebay:
+            # 207 = "HD - Movies"
+            category: 207
+            sort_by: seeds
 
     # Don't download movies already rated 
     #   (i.e. already seen)
