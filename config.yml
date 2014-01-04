@@ -81,15 +81,12 @@ tasks:
     accept_all: yes
     queue_movies: yes
 
-  # Newly available Movies feed
   Movies:
-    rss: http://movieboot.com/rss/@MOVIEBOOT_ID@/
     template:
       - movies
       - downloader
 
   TV:
-    rss: http://showrss.info/feeds/all.rss
     template:
       - tv
       - downloader
