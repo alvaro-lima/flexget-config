@@ -9,6 +9,8 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
+    quality: 720p+ hdtv+
+
   # If the decision is made to download, apply these settings
   downloader:
     # Send to Transmission
@@ -51,9 +53,6 @@ templates:
     # Set the download path for movies
     set:                                                                                                               
       path: @DOWNLOADS_ROOT@/_Movies   
-
-    # Set quality: only DVDRip or better
-    quality: hdrip-bluray
 
     # Apply to the movie queue
     movie_queue: yes
