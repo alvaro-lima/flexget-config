@@ -11,14 +11,10 @@ templates:
 
     quality: 720p+ hdtv+
 
-  # If the decision is made to download, apply these settings
-  downloader:
-    # Send to Transmission
+    # Add the output plugin for Transmission
     transmission:
       netrc: /root/.netrc
-
-      # Remove Transmission entries when 'done'
-      removewhendone: yes
+      removewhendone: yes 	# Remove entries when max ratio reached
 
   # TV shows
   tv:
