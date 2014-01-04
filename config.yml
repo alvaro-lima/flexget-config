@@ -74,6 +74,13 @@ templates:
         - emit_movie_queue: yes
       from:
         - torrentz: verified
+        - kat:
+            category: movies
+            verified: yes
+        - piratebay:
+            # 207 = "HD - Movies"
+            category: 207
+            sort_by: seeds
 
     # Don't download movies already rated 
     #   (i.e. already seen)
