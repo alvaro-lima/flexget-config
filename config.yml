@@ -18,11 +18,6 @@ templates:
       # Remove Transmission entries when 'done'
       removewhendone: yes
 
-    # Send a Pushover notification for new downloads
-    pushover:
-      userkey: G49sadwAjzpZCV51AEJowW1YbBFlSk
-      apikey: WYgKOx8XRECNPEpZzMAclfz9X7WnFj
-
   # TV shows
   tv:
     # Check if the TV show already exists locally
