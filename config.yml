@@ -13,6 +13,7 @@ templates:
       netrc: /root/.netrc
 
     clean_transmission:
+      enabled: yes
       netrc: /root/.netrc
       min_ratio: 2
 
