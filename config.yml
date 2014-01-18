@@ -11,7 +11,10 @@ templates:
     # Add the output plugin for Transmission
     transmission:
       netrc: /root/.netrc
-      removewhendone: yes # Remove entries when max ratio reached
+
+    clean_transmission:
+      netrc: /root/.netrc
+      min_ratio: 2
 
   # TV shows
   tv:
