@@ -39,7 +39,7 @@ templates:
             category: tv
             verified: yes
         - piratebay:
-            category: 207 # "HD - TV"
+            category: 208 # "HD - TV"
             sort_by: seeds
 
   # Movies
