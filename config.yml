@@ -25,7 +25,7 @@ templates:
       path: "@DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
 
     configure_series:
-      [settings]:
+      settings:
         exact: yes
       from:
         thetvdb_favorites:
