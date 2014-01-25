@@ -86,6 +86,8 @@ tasks:
     imdb_list:
       list: watchlist
       user_id: @IMDB_ID@
+      username: @IMDB_USER@
+      password: @IMDB_PASS@
     accept_all: yes
     queue_movies: yes
 
