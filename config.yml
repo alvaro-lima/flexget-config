@@ -12,7 +12,7 @@ templates:
 
   # TV shows
   tv:
-    exists_series: @DOWNLOADS_ROOT@/_TV
+    exists_series: @DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}
 
     thetvdb_lookup: yes
     set:
