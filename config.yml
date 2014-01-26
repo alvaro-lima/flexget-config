@@ -6,12 +6,6 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
-    quality: 720p+ hdtv+
-
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: /root/.netrc
-
     clean_transmission:
       netrc: /root/.netrc
       min_ratio: 2
@@ -32,6 +26,8 @@ templates:
           account_id: @TVDB_ID@
           strip_dates: yes
 
+    quality: 720p+ hdtv+
+
     discover:
       what:
         - emit_series: yes
@@ -44,6 +40,10 @@ templates:
             category: 208 # "HD - TV"
             sort_by: seeds
 
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: /root/.netrc
+
   # Movies
   movies:
     exists_movie: @DOWNLOADS_ROOT@/_Movies
@@ -53,6 +53,8 @@ templates:
       path: @DOWNLOADS_ROOT@/_Movies   
 
     movie_queue: yes
+
+    quality: 720p+ hdtv+
 
     discover:
       what:
@@ -80,6 +82,10 @@ templates:
 
     # Attempt to prevent bogus downloads
     imdb_required: yes
+
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: /root/.netrc
 
 # Tasks
 tasks:
