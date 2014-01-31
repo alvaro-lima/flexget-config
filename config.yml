@@ -6,10 +6,6 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
-    clean_transmission:
-      netrc: /root/.netrc
-      min_ratio: 2
-
   # TV shows
   tv:
     exists_series: @DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}
@@ -106,3 +102,8 @@ tasks:
   TV:
     template:
       - tv
+
+  Stop seeding:
+    clean_transmission:
+      netrc: /root/.netrc
+      min_ratio: 2
