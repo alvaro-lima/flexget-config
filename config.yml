@@ -28,7 +28,6 @@ templates:
       what:
         - emit_series: yes
       from:
-        - torrentz: verified
         - kat:
             category: tv
             verified: yes
@@ -56,7 +55,6 @@ templates:
       what:
         - emit_movie_queue: yes
       from:
-        - torrentz: verified
         - kat:
             category: movies
             verified: yes
@@ -70,8 +68,6 @@ templates:
         - imdb_list:
             list: ratings
             user_id: @IMDB_ID@
-            username: @IMDB_USER@
-            password: @IMDB_PASS@
       fields:
         - imdb_id
       action: reject
@@ -90,8 +86,6 @@ tasks:
     imdb_list:
       list: watchlist
       user_id: @IMDB_ID@
-      username: @IMDB_USER@
-      password: @IMDB_PASS@
     accept_all: yes
     queue_movies: yes
 
@@ -106,4 +100,4 @@ tasks:
   Stop seeding:
     clean_transmission:
       netrc: /root/.netrc
-      min_ratio: 2
+      min_ratio: 1
