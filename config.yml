@@ -10,18 +10,18 @@ templates:
 
   # TV shows
   tv:
-    exists_series: "{{ secrets.general.tv }}/{{ series_name|replace(':',' -') }}"
+    exists_series: '{{ secrets.general.tv }}/{{ series_name|replace(":"," -") }}'
 
     thetvdb_lookup: yes
     set:
-      path: "{{ secrets.general.tv }}/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
+      path: '{{ secrets.general.tv }}/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
     configure_series:
       settings:
         exact: yes
       from:
         thetvdb_favorites:
-          account_id: {{ secrets.thetvdb.account_id }}
+          account_id: '{{ secrets.thetvdb.account_id }}'
           strip_dates: yes
 
     quality: hdtv+
@@ -39,7 +39,7 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: "{{ secrets.general.netrc }}"
+      netrc: '{{ secrets.general.netrc }}'
 
   # Movies
   movies:
@@ -69,7 +69,7 @@ templates:
       from:
         - imdb_list:
             list: ratings
-            user_id: {{ secrets.imdb.user_id }}
+            user_id: '{{ secrets.imdb.user_id }}'
       fields:
         - imdb_id
       action: reject
@@ -79,7 +79,7 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: "{{ secrets.general.netrc }}"
+      netrc: '{{ secrets.general.netrc }}'
 
 # Tasks
 tasks:
@@ -87,7 +87,7 @@ tasks:
   Watchlist:
     imdb_list:
       list: watchlist
-      user_id: {{ secrets.imdb.user_id }}
+      user_id: '{{ secrets.imdb.user_id }}'
     accept_all: yes
     queue_movies: yes
 
@@ -101,5 +101,5 @@ tasks:
 
   Stop seeding:
     clean_transmission:
-      netrc: "{{ secrets.general.netrc }}"
+      netrc: '{{ secrets.general.netrc }}'
       min_ratio: 1
