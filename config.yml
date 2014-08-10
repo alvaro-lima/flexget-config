@@ -1,3 +1,5 @@
+secrets: secrets.yml
+
 templates:
   global:
     content_filter:
@@ -8,18 +10,18 @@ templates:
 
   # TV shows
   tv:
-    exists_series: @DIR_TV@/{{ series_name|replace(':',' -') }}
+    exists_series: "{{ secrets.general.tv }}/{{ series_name|replace(':',' -') }}"
 
     thetvdb_lookup: yes
     set:
-      path: "@DIR_TV@/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
+      path: "{{ secrets.general.tv }}/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
 
     configure_series:
       settings:
         exact: yes
       from:
         thetvdb_favorites:
-          account_id: @TVDB_ID@
+          account_id: {{ secrets.thetvdb.account_id }}
           strip_dates: yes
 
     quality: hdtv+
@@ -37,15 +39,15 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: /root/.netrc
+      netrc: "{{ secrets.general.netrc }}"
 
   # Movies
   movies:
-    exists_movie: @DIR_MOVIES@
+    exists_movie: "{{ secrets.general.movies }}"
     seen_movies: strict
 
     set:                                                                                                               
-      path: @DIR_MOVIES@
+      path: "{{ secrets.general.movies }}"
 
     movie_queue: yes
 
@@ -67,7 +69,7 @@ templates:
       from:
         - imdb_list:
             list: ratings
-            user_id: @IMDB_ID@
+            user_id: {{ secrets.imdb.user_id }}
       fields:
         - imdb_id
       action: reject
@@ -77,7 +79,7 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: /root/.netrc
+      netrc: "{{ secrets.general.netrc }}"
 
 # Tasks
 tasks:
@@ -85,7 +87,7 @@ tasks:
   Watchlist:
     imdb_list:
       list: watchlist
-      user_id: @IMDB_ID@
+      user_id: {{ secrets.imdb.user_id }}
     accept_all: yes
     queue_movies: yes
 
@@ -99,5 +101,5 @@ tasks:
 
   Stop seeding:
     clean_transmission:
-      netrc: /root/.netrc
+      netrc: "{{ secrets.general.netrc }}"
       min_ratio: 1
