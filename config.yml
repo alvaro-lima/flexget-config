@@ -8,11 +8,11 @@ templates:
 
   # TV shows
   tv:
-    exists_series: @DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}
+    exists_series: @DIR_TV@/{{ series_name|replace(':',' -') }}
 
     thetvdb_lookup: yes
     set:
-      path: "@DOWNLOADS_ROOT@/_TV/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
+      path: "@DIR_TV@/{{ series_name|replace(':',' -') }}/Season {{ series_season }}/"
 
     configure_series:
       settings:
@@ -41,11 +41,11 @@ templates:
 
   # Movies
   movies:
-    exists_movie: @DOWNLOADS_ROOT@/_Movies
+    exists_movie: @DIR_MOVIES@
     seen_movies: strict
 
     set:                                                                                                               
-      path: @DOWNLOADS_ROOT@/_Movies   
+      path: @DIR_MOVIES@
 
     movie_queue: yes
 
