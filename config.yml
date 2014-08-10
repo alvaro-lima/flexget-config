@@ -22,7 +22,7 @@ templates:
           account_id: @TVDB_ID@
           strip_dates: yes
 
-    quality: 720p+ hdtv+
+    quality: hdtv+
 
     discover:
       what:
