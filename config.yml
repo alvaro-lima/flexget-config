@@ -3,14 +3,16 @@ secrets: secrets.yml
 templates:
   global:
     content_filter:
-      reject: "*.rar"
+      reject: '*.rar'
 
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
   # TV shows
   tv:
-    exists_series: '{{ secrets.general.tv }}/{{ series_name|replace(":"," -") }}'
+    exists_series:
+      path: '{{ secrets.general.tv }}'
+      allow_different_qualities: yes
 
     thetvdb_lookup: yes
     set:
@@ -43,11 +45,11 @@ templates:
 
   # Movies
   movies:
-    exists_movie: "{{ secrets.general.movies }}"
+    exists_movie: '{{ secrets.general.movies }}'
     seen_movies: strict
 
     set:                                                                                                               
-      path: "{{ secrets.general.movies }}"
+      path: '{{ secrets.general.movies }}'
 
     movie_queue: yes
 
