@@ -11,12 +11,12 @@ templates:
   # TV shows
   tv:
     exists_series:
-      path: '{{ secrets.general.tv }}'
+      path: '{{ secrets.general.tv_path }}'
       allow_different_qualities: yes
 
     thetvdb_lookup: yes
     set:
-      path: '{{ secrets.general.tv }}/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
+      path: '{{ secrets.general.tv_path }}/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
     configure_series:
       settings:
@@ -41,15 +41,15 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: '{{ secrets.general.netrc }}'
+      netrc: '{{ secrets.general.netrc_path }}'
 
   # Movies
   movies:
-    exists_movie: '{{ secrets.general.movies }}'
+    exists_movie: '{{ secrets.general.movies_path }}'
     seen_movies: strict
 
     set:                                                                                                               
-      path: '{{ secrets.general.movies }}'
+      path: '{{ secrets.general.movies_path }}'
 
     movie_queue: yes
 
@@ -81,7 +81,7 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
-      netrc: '{{ secrets.general.netrc }}'
+      netrc: '{{ secrets.general.netrc_path }}'
 
 # Tasks
 tasks:
@@ -103,5 +103,5 @@ tasks:
 
   Stop seeding:
     clean_transmission:
-      netrc: '{{ secrets.general.netrc }}'
+      netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
