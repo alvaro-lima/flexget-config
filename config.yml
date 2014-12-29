@@ -35,9 +35,6 @@ templates:
         - kat:
             category: tv
             verified: yes
-        - piratebay:
-            category: 208 # "HD - TV"
-            sort_by: seeds
 
     # Add the output plugin for Transmission
     transmission:
@@ -62,9 +59,6 @@ templates:
         - kat:
             category: movies
             verified: yes
-        - piratebay:
-            category: 207 # "HD - Movies"
-            sort_by: seeds
 
     # Don't download movies already rated 
     crossmatch:
