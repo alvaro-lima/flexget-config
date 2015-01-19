@@ -48,9 +48,9 @@ templates:
     set:                                                                                                               
       path: '{{ secrets.general.movies_path }}'
 
-    movie_queue: yes
-
-    quality: 720p+ hdtv+
+    movie_queue:
+      action: add
+      quality: 720p+ hdtv+
 
     discover:
       what:
