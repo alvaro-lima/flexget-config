@@ -19,12 +19,13 @@ templates:
       path: '/c/Downloads/_TV/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
     configure_series:
+      from:
+        trakt_list:
+          username: '{{ secrets.trakt.username}}'
+          list: '{{ secrets.trakt.tv_list }}'
+          type: shows
       settings:
         exact: yes
-      from:
-        thetvdb_favorites:
-          account_id: '{{ secrets.thetvdb.account_id }}'
-          strip_dates: yes
 
     quality: hdtv+
 
