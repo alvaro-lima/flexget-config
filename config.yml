@@ -3,7 +3,9 @@ secrets: secrets.yml
 templates:
   global:
     content_filter:
-      reject: '*.rar'
+      reject:
+        - '*.rar'
+        - '*HEVC*'
 
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
