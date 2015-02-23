@@ -85,7 +85,7 @@ tasks:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
     accept_all: yes
-    queue_movies: yes
+    movie_queue: add
 
   Movies:
     template:
