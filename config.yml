@@ -16,7 +16,7 @@ templates:
 
     thetvdb_lookup: yes
     set:
-      path: '{{ secrets.general.tv_path }}/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
+      path: '/c/Downloads/_TV/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
     configure_series:
       settings:
