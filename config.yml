@@ -10,38 +10,21 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: '{{ secrets.general.netrc_path }}'
+
   # TV shows
   tv:
     exists_series:
       path: '{{ secrets.general.tv_path }}'
       allow_different_qualities: yes
 
-    thetvdb_lookup: yes
+    trakt_lookup: yes
     set:
       path: '/c/Downloads/_TV/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
-    configure_series:
-      from:
-        trakt_list:
-          username: '{{ secrets.trakt.username}}'
-          list: '{{ secrets.trakt.tv_list }}'
-          type: shows
-      settings:
-        exact: yes
-
     quality: hdtv+
-
-    discover:
-      what:
-        - emit_series: yes
-      from:
-        - kat:
-            category: tv
-            verified: yes
-
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: '{{ secrets.general.netrc_path }}'
 
   # Movies
   movies:
@@ -54,14 +37,6 @@ templates:
     movie_queue:
       action: add
       quality: 720p+ hdtv+
-
-    discover:
-      what:
-        - emit_movie_queue: yes
-      from:
-        - kat:
-            category: movies
-            verified: yes
 
     # Don't download movies already rated 
     crossmatch:
@@ -76,14 +51,10 @@ templates:
     # Attempt to prevent bogus downloads
     imdb_required: yes
 
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: '{{ secrets.general.netrc_path }}'
-
 # Tasks
 tasks:
   # Fetch titles from an IMDB watchlist and add to the movie queue
-  Watchlist:
+  Movie watchlist:
     imdb_list:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
@@ -91,10 +62,36 @@ tasks:
     movie_queue: add
 
   Movies:
+    discover:
+      what:
+        - emit_movie_queue: yes
+      from:
+        - kat:
+            category: movies
+            verified: yes
+
     template:
       - movies
 
   TV:
+    configure_series:
+      from:
+        trakt_list:
+          username: '{{ secrets.trakt.username }}'
+          list: '{{ secrets.trakt.tv_list }}'
+          type: shows
+      settings:
+        exact: yes
+        identified_by: ep
+
+    discover:
+      what:
+        - emit_series: yes
+      from:
+        - kat:
+            category: tv
+            verified: yes
+
     template:
       - tv
 
@@ -102,3 +99,4 @@ tasks:
     clean_transmission:
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
+    disable_builtins: [details]
