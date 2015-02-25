@@ -53,14 +53,15 @@ templates:
 
 # Tasks
 tasks:
-  Movies:
-    # Fetch titles from an IMDB watchlist and add to the movie queue
+  # Fetch titles from an IMDB watchlist and add to the movie queue
+  Movie watchlist:
     imdb_list:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
     accept_all: yes
     movie_queue: add
 
+  Movies:
     discover:
       what:
         - emit_movie_queue: yes
