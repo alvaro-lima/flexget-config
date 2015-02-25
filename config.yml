@@ -34,9 +34,7 @@ templates:
     set:                                                                                                               
       path: '{{ secrets.general.movies_path }}'
 
-    movie_queue:
-      action: add
-      quality: 720p+ hdtv+
+    quality: 720p+ hdtv+
 
     # Don't download movies already rated 
     crossmatch:
