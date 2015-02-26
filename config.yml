@@ -60,7 +60,6 @@ tasks:
     imdb_list:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
-    accept_all: yes
     movie_queue: add
 
   Movies:
