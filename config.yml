@@ -10,10 +10,6 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: '{{ secrets.general.netrc_path }}'
-
   # TV shows
   tv:
     exists_series:
@@ -25,6 +21,10 @@ templates:
       path: '/c/Downloads/_TV/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
 
     quality: hdtv+
+
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: '{{ secrets.general.netrc_path }}'
 
   # Movies
   movies:
@@ -48,6 +48,10 @@ templates:
 
     # Attempt to prevent bogus downloads
     imdb_required: yes
+
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: '{{ secrets.general.netrc_path }}'
 
 # Tasks
 tasks:
