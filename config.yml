@@ -49,6 +49,9 @@ templates:
     # Attempt to prevent bogus downloads
     imdb_required: yes
 
+    # Filter to accept entries
+    movie_queue: accept
+
     # Add the output plugin for Transmission
     transmission:
       netrc: '{{ secrets.general.netrc_path }}'
