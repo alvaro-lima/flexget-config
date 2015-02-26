@@ -14,7 +14,6 @@ templates:
   tv:
     exists_series:
       path: '{{ secrets.general.tv_path }}'
-      allow_different_qualities: yes
 
     trakt_lookup: yes
     set:
