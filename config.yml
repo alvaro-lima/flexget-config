@@ -27,7 +27,11 @@ templates:
 
   # Movies
   movies:
-    exists_movie: '{{ secrets.general.movies_path }}'
+    exists_movie:
+      path: '{{ secrets.general.movies_path }}'
+      type: files
+      lookup: imdb
+
     seen_movies: strict
 
     set:                                                                                                               
