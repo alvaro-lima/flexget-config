@@ -15,9 +15,9 @@ templates:
     exists_series:
       path: '{{ secrets.general.tv_path }}'
 
-    trakt_lookup: yes
+    thetvdb_lookup: yes
     set:
-      path: '/c/Downloads/_TV/{{ series_name|replace(":"," -") }}/Season {{ series_season }}'
+      path: '/c/Downloads/_TV/{{ tvdb_series_name }}/Season {{ series_season }}'
 
     quality: hdtv+
 
