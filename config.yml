@@ -76,6 +76,7 @@ tasks:
         - kat:
             category: movies
             verified: yes
+        - torrentz: verified
 
     template:
       - movies
@@ -98,6 +99,7 @@ tasks:
         - kat:
             category: tv
             verified: yes
+        - torrentz: verified
 
     template:
       - tv
