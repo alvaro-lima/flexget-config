@@ -10,6 +10,11 @@ templates:
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
 
+    # Add the output plugin for Transmission
+    transmission:
+      netrc: '{{ secrets.general.netrc_path }}'
+      main_file_only: yes
+
   # TV shows
   tv:
     exists_series:
@@ -20,11 +25,6 @@ templates:
       path: '/c/Downloads/_TV/{{ tvdb_series_name }}/Season {{ series_season }}'
 
     quality: hdtv+
-
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: '{{ secrets.general.netrc_path }}'
-      main_file_only: yes
 
   # Movies
   movies:
@@ -56,11 +56,6 @@ templates:
     # Filter to accept entries
     movie_queue: accept
 
-    # Add the output plugin for Transmission
-    transmission:
-      netrc: '{{ secrets.general.netrc_path }}'
-      main_file_only: yes
-
 # Tasks
 tasks:
   # Fetch titles from an IMDB watchlist and add to the movie queue
@@ -69,6 +64,9 @@ tasks:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
     movie_queue: add
+
+    # Do not apply the global template
+    template: no_global
 
   Movies:
     discover:
@@ -111,3 +109,4 @@ tasks:
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
     disable_builtins: [details]
+    template: no_global
