@@ -24,6 +24,7 @@ templates:
     # Add the output plugin for Transmission
     transmission:
       netrc: '{{ secrets.general.netrc_path }}'
+      main_file_only: yes
 
   # Movies
   movies:
@@ -58,6 +59,7 @@ templates:
     # Add the output plugin for Transmission
     transmission:
       netrc: '{{ secrets.general.netrc_path }}'
+      main_file_only: yes
 
 # Tasks
 tasks:
