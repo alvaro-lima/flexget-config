@@ -22,7 +22,7 @@ templates:
 
     thetvdb_lookup: yes
     set:
-      path: '/c/Downloads/_TV/{{ tvdb_series_name }}/Season {{ series_season }}'
+      path: '{{ secrets.general.tv_path }}/{{ tvdb_series_name }}/Season {{ series_season }}'
 
     quality: hdtv+
 
