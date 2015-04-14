@@ -91,6 +91,7 @@ tasks:
       settings:
         exact: yes
         identified_by: ep
+        upgrade: no
 
     discover:
       what:
