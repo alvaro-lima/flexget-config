@@ -94,7 +94,8 @@ tasks:
 
     discover:
       what:
-        - emit_series: yes
+        - emit_series:
+            from_start: yes
       from:
         - kat:
             category: tv
