@@ -6,6 +6,7 @@ templates:
       reject:
         - '*.rar'
         - '*HEVC*'
+        - '*hevc*'
 
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
