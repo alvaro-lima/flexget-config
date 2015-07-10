@@ -111,5 +111,5 @@ tasks:
     clean_transmission:
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
-    disable_builtins: [details]
+    disable: [details]
     template: no_global
