@@ -7,6 +7,10 @@ templates:
         - '*.rar'
         - '*HEVC*'
         - '*hevc*'
+        - '*x265*'
+        - '*h265*'
+        - '*h.265*'
+        - '*H.265*'
 
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
