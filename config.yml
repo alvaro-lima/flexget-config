@@ -20,6 +20,11 @@ templates:
       netrc: '{{ secrets.general.netrc_path }}'
       main_file_only: yes
 
+    proxy:
+      http: '{{ secrets.general.proxy }}'
+      https: '{{ secrets.general.proxy }}'
+      ftp: '{{ secrets.general.proxy }}'
+
   # TV shows
   tv:
     exists_series:
