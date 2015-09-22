@@ -20,11 +20,13 @@ templates:
       netrc: '{{ secrets.general.netrc_path }}'
       main_file_only: yes
 
+    # Use a proxy
     proxy:
       http: '{{ secrets.general.proxy }}'
       https: '{{ secrets.general.proxy }}'
       ftp: '{{ secrets.general.proxy }}'
 
+    # Ignore self-signed certificates
     verify_ssl_certificates: no
 
     # Play nicely with some of the source domains
