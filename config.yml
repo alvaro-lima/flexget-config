@@ -25,6 +25,8 @@ templates:
       https: '{{ secrets.general.proxy }}'
       ftp: '{{ secrets.general.proxy }}'
 
+    verify_ssl_certificates: no
+
   # TV shows
   tv:
     exists_series:
