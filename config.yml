@@ -27,6 +27,19 @@ templates:
 
     verify_ssl_certificates: no
 
+    # Play nicely with some of the source domains
+    domain_delay:
+      torrentz.eu: 1 seconds
+    retry_failed:
+      retry_time: 10 seconds
+      retry_time_multiplier: 1
+      max_retries: 4
+
+    # Make it look more like a real browser
+    headers:
+      User-Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
+      Accept-Encoding: "deflate, gzip"
+
   # TV shows
   tv:
     exists_series:
