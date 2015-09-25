@@ -5,12 +5,6 @@ templates:
     content_filter:
       reject:
         - '*.rar'
-        - '*HEVC*'
-        - '*hevc*'
-        - '*x265*'
-        - '*h265*'
-        - '*h.265*'
-        - '*H.265*'
 
     # Ensure Mac friendly filenames/paths
     pathscrub: mac
@@ -51,7 +45,7 @@ templates:
     set:
       path: '{{ secrets.general.tv_path }}/{{ tvdb_series_name }}/Season {{ series_season }}'
 
-    quality: hdtv+
+    quality: hdtv+ !h265
 
   # Movies
   movies:
@@ -65,7 +59,7 @@ templates:
     set:                                                                                                               
       path: '{{ secrets.general.movies_path }}'
 
-    quality: 720p+ hdtv+
+    quality: 720p+ hdtv+ !h265
 
     # Don't download movies already rated 
     crossmatch:
