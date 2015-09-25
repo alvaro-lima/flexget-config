@@ -30,6 +30,8 @@ templates:
     verify_ssl_certificates: no
 
     # Play nicely with some of the source domains
+    domain_delay:
+      torrentz.eu: 1 seconds
     retry_failed:
       retry_time: 10 seconds
       retry_time_multiplier: 1
@@ -101,15 +103,7 @@ tasks:
         - kat:
             category: movies
             verified: yes
-        - piratebay:
-            category: video
-            sort_by: leechers
-        - rarbg:
-            category:
-              - x264 720p
-              - x264 1080p
-            use_tvdb: True
-            sorted_by: seeders
+        - torrentz: verified
 
     template:
       - movies
@@ -134,15 +128,7 @@ tasks:
         - kat:
             category: tv
             verified: yes
-        - piratebay:
-            category: video
-            sort_by: leechers
-        - rarbg:
-            category:
-              - x264 720p
-              - x264 1080p
-            use_tvdb: True
-            sorted_by: seeders
+        - torrentz: verified
 
     template:
       - tv
