@@ -80,6 +80,7 @@ templates:
 tasks:
   # Fetch titles from an IMDB watchlist and add to the movie queue
   Movie watchlist:
+    interval: 24 hours
     imdb_list:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
@@ -89,6 +90,7 @@ tasks:
     template: no_global
 
   Movies:
+    interval: 12 hours
     discover:
       what:
         - emit_movie_queue: yes
@@ -102,6 +104,7 @@ tasks:
       - movies
 
   TV:
+    interval: 4 hours
     configure_series:
       from:
         trakt_list:
@@ -127,6 +130,7 @@ tasks:
       - tv
 
   Stop seeding:
+    interval: 1 hours
     clean_transmission:
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
