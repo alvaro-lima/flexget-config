@@ -32,9 +32,6 @@ templates:
 
   # TV shows
   tv:
-    exists_series:
-      path: '{{ secrets.general.tv_path }}'
-
     thetvdb_lookup: yes
     set:
       path: '{{ secrets.general.tv_path }}/{{ tvdb_series_name }}/Season {{ series_season }}'
@@ -43,11 +40,6 @@ templates:
 
   # Movies
   movies:
-    exists_movie:
-      path: '{{ secrets.general.movies_path }}'
-      type: files
-      lookup: imdb
-
     seen_movies: strict
 
     set:                                                                                                               
