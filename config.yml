@@ -11,6 +11,7 @@ templates:
 
     # Add the output plugin for Transmission
     transmission:
+      host: '{{ secrets.general.transmission_host }}'
       netrc: '{{ secrets.general.netrc_path }}'
       main_file_only: yes
 
@@ -128,6 +129,7 @@ tasks:
   Stop seeding:
     interval: 1 hours
     clean_transmission:
+      host: '{{ secrets.general.transmission_host }}'
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
     disable: [details]
