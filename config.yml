@@ -95,9 +95,7 @@ tasks:
       what:
         - emit_movie_queue: yes
       from:
-        - kat:
-            category: movies
-            verified: yes
+        - search_rss: https://kickass.unblocked.la/usearch/{{search_term}}%20category:movies%20verified:1/?rss=1
         - torrentz: verified
 
     template:
@@ -121,9 +119,7 @@ tasks:
         - emit_series:
             from_start: yes
       from:
-        - kat:
-            category: tv
-            verified: yes
+        - search_rss: https://kickass.unblocked.la/usearch/{{search_term}}%20category:tv%20verified:1/?rss=1
         - torrentz: verified
 
     template:
