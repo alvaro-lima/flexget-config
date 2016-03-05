@@ -62,6 +62,7 @@ tasks:
       list: watchlist
       user_id: '{{ secrets.imdb.user_id }}'
     movie_queue: add
+    accept_all: yes
 
     # Do not apply the global template
     template: no_global
