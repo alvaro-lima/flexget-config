@@ -47,16 +47,6 @@ templates:
 
     quality: 720p+ hdtv+ !h265
 
-    # Don't download movies already rated 
-    crossmatch:
-      from:
-        - imdb_list:
-            list: ratings
-            user_id: '{{ secrets.imdb.user_id }}'
-      fields:
-        - imdb_id
-      action: reject
-
     # Attempt to prevent bogus downloads
     imdb_required: yes
 
