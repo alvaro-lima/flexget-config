@@ -50,18 +50,17 @@ templates:
     # Attempt to prevent bogus downloads
     imdb_required: yes
 
-    # Filter to accept entries
-    movie_queue: accept
-
 # Tasks
 tasks:
-  # Fetch titles from an IMDB watchlist and add to the movie queue
+  # Fetch titles from an IMDB watchlist and add to the movie list, imdb_watchlist
   movie_watchlist:
     interval: 24 hours
     imdb_list:
+      login: '{{ secrets.imdb.login }}'
+      password: '{{ secrets.imdb.password }}'
       list: watchlist
-      user_id: '{{ secrets.imdb.user_id }}'
-    movie_queue: add
+    list_add:
+      - movie_list: imdb_watchlist
     accept_all: yes
 
     # Do not apply the global template
@@ -71,10 +70,12 @@ tasks:
     interval: 12 hours
     discover:
       what:
-        - emit_movie_queue: yes
+        - movie_list: imdb_watchlist
       from:
         - search_rss: https://kickass.unblocked.la/usearch/{{search_term}}%20category:movies%20verified:1/?rss=1
         - torrentz: verified
+    list_queue:
+      - movie_list: imdb_watchlist
 
     template:
       - movies
