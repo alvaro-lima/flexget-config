@@ -114,5 +114,9 @@ tasks:
       host: '{{ secrets.general.transmission_host }}'
       netrc: '{{ secrets.general.netrc_path }}'
       min_ratio: 1
-    disable: [details]
     template: no_global
+    log_filter:
+      task:
+        - Task doesn't have any input plugins
+        - Task does not have any filter plugins to accept entries
+        - Task doesn't have any output plugins
