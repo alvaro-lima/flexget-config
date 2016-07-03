@@ -110,6 +110,7 @@ tasks:
 
   stop_seeding:
     interval: 1 hours
+    no_entries_ok: yes
     clean_transmission:
       host: '{{ secrets.general.transmission_host }}'
       netrc: '{{ secrets.general.netrc_path }}'
