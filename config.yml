@@ -76,8 +76,9 @@ tasks:
             category: movies
             verified: yes
         - torrentz: verified
-    list_queue:
-      - movie_list: imdb_watchlist
+    list_match:
+      from:
+        - movie_list: imdb_watchlist
 
     template:
       - movies
@@ -97,7 +98,7 @@ tasks:
 
     discover:
       what:
-        - emit_series:
+        - next_series_episodes:
             from_start: yes
       from:
         - kat:
