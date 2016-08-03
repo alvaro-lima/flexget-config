@@ -72,9 +72,9 @@ tasks:
       what:
         - movie_list: imdb_watchlist
       from:
-        - kat:
-            category: movies
-            verified: yes
+        - piratebay:
+            category: 201
+            sort_by: leechers
         - torrentz: verified
     list_match:
       from:
@@ -101,9 +101,9 @@ tasks:
         - next_series_episodes:
             from_start: yes
       from:
-        - kat:
-            category: tv
-            verified: yes
+        - piratebay:
+            category: 205
+            sort_by: leechers
         - torrentz: verified
 
     template:
