@@ -47,9 +47,6 @@ templates:
 
     quality: 720p+ hdtv+ !h265
 
-    # Attempt to prevent bogus downloads
-    imdb_required: yes
-
 # Tasks
 tasks:
   # Fetch titles from an IMDB watchlist and add to the movie list, imdb_watchlist
