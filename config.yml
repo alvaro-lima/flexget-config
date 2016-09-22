@@ -41,6 +41,7 @@ templates:
   # Movies
   movies:
     seen_movies: strict
+    imdb_lookup: yes
 
     set:                                                                                                               
       path: '{{ secrets.general.movies_path }}'
